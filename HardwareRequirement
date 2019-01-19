@@ -1,23 +1,23 @@
-- <p style="background-color:yellow;"> PN532 NFC RFID module V </p>
+-PN532 NFC RFID module V
     Price: $29.00 USD? (https://dangerousthings.com/shop/pn532/)
     Functionality: 
     Extra: PN532 Manual (https://dangerousthings.com/wp-content/uploads/PN532_Manual_V3-1.pdf)
            Github repo (https://github.com/elechouse/PN532)
         
 -------------------------------------------------------------------------------------------------------------------------------------------
-- <p style="background-color:yellow;"> Qualcomm snapdragon 410c </p>
+-Qualcomm snapdragon 410c
     Price: $75.00 USD (https://www.arrow.com/en/products/dragonboard410c/arrow-development-tools?utm_source=Direct)
     Functionality: Highlights, Software and Tutorial (https://developer.qualcomm.com/hardware/dragonboard-410c)
     Extra: Downloadable quick start guide (https://developer.qualcomm.com/mlh)
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-- <p style="background-color:yellow;"> small lcd screen (~5 inches) </p>
+-small lcd screen (~5 inches)
     Price: $24.95-$89.99 USD (src1:https://www.adafruit.com/product/188 ,src2:https://store.arduino.cc/usa/earthlcd-arlcd)
     Functionality: 
     Extra: Arduino Compatible Displays (https://randomnerdtutorials.com/7-arduino-compatible-displays-for-your-electronic-projects/)
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-- <p style="background-color:yellow;"> small camera </p>
+-small camera
     Price: 29.99 USD (https://www.amazon.com/Camera-Detection-Support-Broadcast-Portable/dp/B076DW7F4K)
     Functionality: 
     Extra:
