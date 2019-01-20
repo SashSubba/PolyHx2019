@@ -1,19 +1,38 @@
 package models;
 
-public class Attraction {
+import io.ebean.Model;
+import models.categories.AttractionType;
+import models.compoundKeys.Address;
+
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Attraction extends Model {
+    @Id
+    @Column(name = "id", nullable = false, columnDefinition = "identity")
+    private Long id;
+    @Column(name = "attractionName", nullable = false)
     private String name;
-    private String address;
+    @Embedded
+    private Address address;
+    @Column(name = "phoneNumber", nullable = false)
     private String phoneNumber;
-    private String Schedule;
+    @Column(name = "website", nullable = false)
     private String website;
-    private double price;
+    @Column(name = "GooglePlacesID", nullable = false)
     private String GooglePlacesID;
     private String QRCode;
+    @Column(name = "restrictions", nullable = false)
     private String restrictions;
+    @Column(name = "availableServices", nullable = false)
     private String availableServices;
+    @Column(name = "privateInformation", nullable = false)
     private String privateInformation;
-
-    private String typeOfAttraction;
+    @Column(name = "typeOfAttraction", nullable = false)
+    private AttractionType typeOfAttraction;
 
 
     public String getName() {
@@ -22,14 +41,6 @@ public class Attraction {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhoneNumber() {

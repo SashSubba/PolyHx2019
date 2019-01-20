@@ -1,22 +1,45 @@
 package models;
 
-public class City {
-    private String cityName;
-    private String countryName;
+import io.ebean.Model;
+import models.bridges.City_Country;
+import models.bridges.City_User;
+import models.finders.CityFinder;
 
-    public String getCityName() {
-        return cityName;
-    }
+import javax.persistence.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
+@Entity
+@Table(name = "cities")
+public class City extends Model {
+    public static final CityFinder find = new CityFinder();
+    @Id
+    @Column(name = "id", nullable = false, columnDefinition = "identity")
+    private Long id;
+    @Column(name = "enName", nullable = false)
+    private String en;
+    @Column(name = "frName", nullable = false)
+    private String fr;
+    @ManyToOne(optional = false)
+    @Column(name = "country", nullable = false)
+    private City_Country country;
+    @OneToMany(mappedBy = "city")
+    private List<City_User> managers = new LinkedList<>();
 
-    public String getCountryName() {
-        return countryName;
+    public Long getId() {return id;}
+    //public void setId(Long id) {this.id = id;}
+    public String getEn() {return en;}
+    public void setEn(String en) {this.en = en;}
+    public String getFr() {return fr;}
+    public void setFr(String fr) {this.fr = fr;}
+    public Country getCountry() {return country.getCountry();}
+    public void setCountry(Country country) {this.country.setCountry(country);}
+    @Override
+    public String toString(){return en;}
+    public String toString(String language){
+        if(language.equalsIgnoreCase("fr")) return fr;
+        return en;
     }
-
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
-    }
+    public Iterator<City_User> getManagers(){return managers.iterator();}
 }
