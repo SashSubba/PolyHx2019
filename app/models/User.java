@@ -1,9 +1,9 @@
 package models;
 
+import io.ebean.Finder;
 import io.ebean.Model;
 import models.bridges.City_User;
 import models.compoundKeys.Address;
-import models.finders.UserFinder;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User extends Model {
-	public static final UserFinder find = new UserFinder();
+	public static final Finder<String, User> find = new Finder<>(User.class);
 	@Id
 	@Column(name = "email", nullable = false)
 	private String email;

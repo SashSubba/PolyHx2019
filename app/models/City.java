@@ -1,9 +1,9 @@
 package models;
 
+import io.ebean.Finder;
 import io.ebean.Model;
 import models.bridges.City_Country;
 import models.bridges.City_User;
-import models.finders.CityFinder;
 
 import javax.persistence.*;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "cities")
 public class City extends Model {
-    public static final CityFinder find = new CityFinder();
+    public static final Finder<Long, City> find = new Finder<>(City.class);
     @Id
     @Column(name = "id", nullable = false, columnDefinition = "identity")
     private Long id;
