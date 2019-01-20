@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta charset ="utf-8">
+    <title>WorldWideTraveler</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href = "https://stackpath.bootsrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" integrity = "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAF1NEevoEH3Sl0sibVcOQVnN" crossorigin = "anonymous">
+    <link rel = "stylesheet" href = "style.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body data-sp = "scroll" data-target = ".navbar" data-offset = "50">
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                    <div class = "container">
+                          <a class="navbar-brand" href="#">WWT</a>
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+    
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto">
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#explore">Explore</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#adventure">Adventure</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact Us</a>
+                                  </li>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                          </div>
+                    </div>
+                </nav>
+        </header>
+        <section class = "contact" id = "contact">
+                <div class = "container">
+                    <div class = "row">
+                        <div class = "col-sm-12">
+                          <div class = "headerText text-center">
+                            <br/>
+                          </div>
+                          <input id="text" type="text" value="http://google.com" style="width:80%" /><br />
+                          <div id="qrcode" style="width:100px; height:100px; margin-top:15px;" title="http://youtube.com"><canvas width="100" height="100" style="display: none;"></canvas><br /><br /><br />
+                          <img alt="Scan me!" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAFJUlEQVR4Xu1d4ZrbIAxL3/+hu6+9rksg2JLOSUmn/Q0lYNmybLjstizLfTnw3/3+b/rb7bZ5U/RMWdJ6vvb36rur15jt62EhA9I4ytpoBiRzoeD510VItCHUThE1ZDTy93m7jnbO0VpUQNbzMdR2hL02lHXECxgjGZBlMSBNuE0bIShNPPZToaTQ5MlEXEXEq3QWUXy012GEGJDepEz0GJBlWRhBgYoUR8iOYUd1QabaTFmkl649Gs0NjJEj2h3Nw9ASmvdax5kmh0QebUB+rHNqUjcgPxaYJkIY5abmjeo+VIWkn5ayDIgj5O2cFc7AJPzL1yHoBjKp+7WUpRROT5UQHEIdkdQV6dwmVrX4YyT4yJ6tvaZpLqqy14AkoeMI4bgljBBuKmy0IhujA6qjn1Ulbsw6/agpz9SPNnqb6xSnUQ2e/c6AFJ3nZIZGnxuQ2QC5V2g3EH4m4Y+kqHoBAlxiN+xE8zzffTMgMVQGZMc+Ua2htkTQiLkkIMpB0F5VjxpJaY+ohWdFFc9I6RLKMiBxy8iA7ISaI+RlFNQQCl21TcKKSGXWqxaU4YnhSGUxYTbi9CxPoBcNovkjINGEjyZuBnBUiHQy3oBsz7hVgMvaPQZkYkAqzhZQmog8UfU2Zk60E4DKXiaywjy1jhADEkdLReunFSItkJs6xIBMAMjobwxV+dchvjpjV9UMuhZ0/kz9KRKcodmQ3gyIYv7+NwbkZROUZqPIrYDEgHwrIBV1yBEtBNRrmbyBSF1VtjMRElbxBiS+ja46xkdbJ46QXi6XAKJOglap6Hk4KnPTIiv4ZIbi+VUN16j6hwvDCjVjQHo36G4uoq0TA8KdCqJHBgYE5arXODU/yoBUfJ4JXXRFW4Up8KJ1jQzGHEKR2L6Hh7nagOCyV615GEcsuUrqCOFiRSoMuVdgoyvogKmkUcqK+F5dM7POjQz+5FVSNPFFuj1yBQOSBIrqbQYEYyB6lAHJTTas1FEqeIxT+bLiXlZFwZqb6WcE09Jh7DfMIahh0RZItlED0lvIEZJ5zer5KRGinKkTewiHKhFZkYeY9aOUWHVFaFgYVlWl0eYNSJ9/DQgh1RnKQh266/aasmJELkFZzMkZ2udSTysrDIbOwdDvqRFiQHbkKvEVpKjzIOUQA3ISIEzSQhuDKB0oiqvtEhy9fqb6lil4ndSP3pA6fwR+BeBnrws+MVQXhv4OHVfliWiX+Ox1SYAweQKtfJnrlooxK6p4lDqzPaNnMZ1NRpRlQDKTx88NyC8+4o9GIwORAfkWQD55po5Ws6oHo12CaH50jUzuCUWEAdkSUVUbnVGKwxNDhiOVsepm/6sIqbi5KHvD4C90K4DLqniUYlDaK1uzAdHlKwoWwyYlV0kdIdw378M2viNk4ghBJZ56UKNW/2ivqep6EtrJRsUGY9dT/3cEA5JnEwOS2Aj17orG5lMZos1FNHFXyb8RHaAGaterRmfu0/sj5HUaEP1uMuqkDKiOkF9cFjcgyQ30KvXHePRo7CUpa3SUibY1GMNVSGLmxBPdg3xiiIYnk9QNyM43Uj6Z1A3IRQFBK3WVwtA7VO386DEtyi4fr0PQCDEgpBRU29AGxJT1Zo+REzFq7FTKYvg46nqiehyViRGPZ+0SpIur9qSY9UdAntpcZAo31CHU/DL6nQF5WZ7xMMTTn4ol+MTfJQBBvZIZh3owOo55dwVwqGRlusnhXmc8wmVyAQrQEYCj6pLqXhgQvf1uQNBw2Bl3lQj5A48lDOYF7bXQAAAAAElFTkSuQmCC" style="display: block;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          <footer>
+              <div class = "container">
+                  <div class = "row">
+                      <div class = "col-sm-12">
+                          <ul class = "sci">
+                              <li><a href = "#"><i class = "fab fa-facebook"></i></a></li><!-- use fontwaseome icon -->
+                              <li><a href = "#"><span class = "fab fa-twitter"></span></a></li><!-- use fontwaseome icon -->
+                              <li><a href = "#"><i class = "fab fa-google-plus"></i></a></li><!-- use fontwaseome icon -->
+                              <li><a href = "#"><i class = "fab fa-linkedin"></i></a></li><!-- use fontwaseome icon -->
+                              <li><a href = "#"><i class = "fab fa-instagram"></i></a></li><!-- use fontwaseome icon -->
+                          </ul>
+                          <p class = "cpryt">@ Copyright 2019 WorldWideTraveler | Template by <a href = "">Online Tutorials</a></p>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          <script type="text/javascript">
+              $(document).scroll(function(){
+                  $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+              });
+          </script>
+          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/brands.js" integrity="sha384-VLgz+MgaFCnsFLiBwE3ItNouuqbWV2ZnIqfsA6QRHksEAQfgbcoaQ4PP0ZeS0zS5" crossorigin="anonymous"></script>
+          <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/fontawesome.js" integrity="sha384-treYPdjUrP4rW5q82SnECO7TPVAz4bpas16yuE9F5o7CeBn2YYw1yr5oC8s8Mf8t" crossorigin="anonymous"></script>
+          <script type="text/javascript">
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+              width : 100,
+              height : 100
+            });
+
+            function makeCode () {    
+              var elText = document.getElementById("text");
+              
+              if (!elText.value) {
+                alert("Input a text");
+                elText.focus();
+                return;
+              }
+              
+              qrcode.makeCode(elText.value);
+            }
+
+            makeCode();
+
+            $("#text").
+              on("blur", function () {
+                makeCode();
+              }).
+              on("keydown", function (e) {
+                if (e.keyCode == 13) {
+                  makeCode();
+                }
+              });
+            </script>
+</body>
+</html>
