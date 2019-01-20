@@ -13,6 +13,18 @@ public class Address implements Serializable {
 	public String city;
 	public String country;
 
+	public Address(){}
+
+	public Address(String number, String unit, String street, String postalCode, String province, String city, String country) {
+		this.number = number;
+		this.unit = unit;
+		this.street = street;
+		this.postalCode = postalCode;
+		this.province = province;
+		this.city = city;
+		this.country = country;
+	}
+
 	@Override
 	public String toString(){
 		String answer = "";

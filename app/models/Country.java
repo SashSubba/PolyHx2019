@@ -8,10 +8,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "country")
 public class Country extends Model {
 	public static final Finder<Long, Country> find = new Finder<>(Country.class);
 	@Id
-	@Column(name = "id", nullable = false, columnDefinition = "identity")
+	@GeneratedValue
+	@Column(name = "id", nullable = false)
 	private Long id;
 	@Column(name = "enName", nullable = false)
 	private String en;

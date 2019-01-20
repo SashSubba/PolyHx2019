@@ -1,0 +1,14 @@
+@()
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+				<ul>
+				@for(city <- City.find.all()) {
+					<li class="navbar-brand">@city.getCountry.getEn , @city.getEn</li>
+				}
+				</ul>
+			</div>
+		</div>
+	</div>
+}

@@ -1,0 +1,23 @@
+@(countryForm: Form[Country])
+@import helper._
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+			@form(routes.HomeController.addCountry()) {
+
+				<fieldset>
+					@CSRF.formField
+					@inputText(countryForm("en"), '_label -> "English Name", '_help -> "")
+					@inputText(countryForm("fr"), '_label -> "French Name", '_help -> "")
+				</fieldset>
+
+				<div class="actions">
+					<input type="submit" value="Create this country" class="btn primary"> or
+					<a href="@routes.HomeController.home()" class="btn">Cancel</a>
+				</div>
+			}
+			</div>
+		</div>
+	</div>
+}

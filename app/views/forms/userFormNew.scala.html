@@ -1,0 +1,82 @@
+@(userForm: Form[ghosts.UserGhost])
+@import helper._
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+			@form(routes.HomeController.addUser(), 'id -> "newUserForm") {
+				<fieldset>
+					@CSRF.formField
+					@inputText(userForm("firstName"), '_label -> "First Name", '_help -> "")
+					@inputText(userForm("lastName"), '_label -> "Last Name", '_help -> "")
+					<div class="form-inline">
+						<label>Date of Birth</label>
+						@input(userForm("dob"),'_label -> "Day") { (id, name, value, args) =>
+							<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- 1 until 31) {
+								<option value=@c>@c</option>
+							}
+							</select>
+						}
+						/
+						@input(userForm("mob"), '_label -> "Month") { (id, name, value, args) =>
+							<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- 1 until 12) {
+								<option value=@c>@c</option>
+							}
+							</select>
+						}
+						/
+						@input(userForm("yob"), '_label -> "Year") { (id, name, value, args) =>
+							<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- (java.time.LocalDate.now().getYear.toInt - 100) until java.time.LocalDate.now().getYear.toInt) {
+								<option value=@c>@c</option>
+							}
+							</select>
+						}
+					</div>
+					@inputText(userForm("phoneNumber"), '_label -> "Phone Number", '_help -> "")
+					@inputText(userForm("email"), '_label -> "Email", '_help -> "")
+					@inputPassword(userForm("password"), '_label -> "Password", '_help -> "")
+					@inputPassword(userForm("password2"), '_label -> "Confirm password", '_help -> "")
+					<div class="form-inline"><label>Full Address </label>
+						@inputText(userForm("unit"), '_label -> "", '_help -> "", 'placeholder -> "Unit")
+					@inputText(userForm("number"), '_label -> "", '_help -> "", 'placeholder -> "Number")
+					@inputText(userForm("street"), '_label -> "", '_help -> "", 'placeholder -> "Street")
+					@inputText(userForm("postalCode"), '_label -> "", '_help -> "", 'placeholder -> "Postal Code")
+					@inputText(userForm("province"), '_label -> "", '_help -> "", 'placeholder -> "Province")
+						@input(userForm("city")) { (id, name, value, args) =>
+							<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- City.find.all()) {
+								<option value=@c.getId>@c.getEn</option>
+							}
+							</select>
+						}
+						@input(userForm("country")) { (id, name, value, args) =>
+							<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- Country.find.all()) {
+								<option value=@c.getId>@c.getEn</option>
+							}
+							</select>
+						}
+					</div>
+				</fieldset>
+				<div class="actions">
+					<input type="submit" value="Create this user" class="btn primary"> or
+					<a href="@routes.HomeController.home()" class="btn">Cancel</a>
+				</div>
+			}
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			$("#newUserForm").on("submit", function (e) {
+				if($("#password").val().equals("")){
+					alert("you must enter a password!");
+					e.preventDefault();
+				}
+			})
+		});
+	</script>
+}

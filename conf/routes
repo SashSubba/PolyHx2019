@@ -8,6 +8,17 @@ GET     /                           controllers.HomeController.index
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
 GET     /message                    controllers.AsyncController.message
+GET     /home   controllers.HomeController.home()
+GET     /login  controllers.HomeController.login()
+GET     /city/new   controllers.HomeController.blankCity()
+POST    /city/save  controllers.HomeController.addCity()
+GET     /city/list  controllers.HomeController.listCities()
+GET        /country/new        controllers.HomeController.blankCountry()
+POST        /country/save        controllers.HomeController.addCountry()
+GET         /user/new         controllers.HomeController.blankUser()
+POST        /user/save        controllers.HomeController.addUser()
+GET         /user/list        controllers.HomeController.listUsers()
+GET         /user/qr/:id        controllers.HomeController.getInfo(id:String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

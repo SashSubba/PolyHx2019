@@ -5,13 +5,15 @@ import io.ebean.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class AttractionType extends Model {
     public static final Finder<Long,AttractionType> find = new Finder<>(AttractionType.class);
     @Id
-    @Column(name = "id", nullable = false, columnDefinition = "identity")
+    @GeneratedValue
+    @Column(name = "id", nullable = false)
     private Long ID;
     @Column(name = "enName", nullable = false)
     private String en;

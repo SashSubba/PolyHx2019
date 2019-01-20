@@ -52,6 +52,7 @@ public class User extends Model {
 	public void setFirstName(String firstName) {this.firstName = firstName;}
 	public String getLastName() {return lastName;}
 	public void setLastName(String lastName) {this.lastName = lastName;}
+	public void setPassword(String password){this.password = password;}
 	public int getYob() {return yob;}
 	public void setYob(int yob) {this.yob = yob;}
 	public int getMob() {return mob;}
@@ -65,6 +66,9 @@ public class User extends Model {
 	public void setParentUser(User parentUser) {this.parentUser = parentUser;}
 	public boolean isCityManager() {return (managedCities.isEmpty());}
 	public Iterator<City_User> getManagers() {return managedCities.iterator();}
+	public String getQR(){
+		return email + " " + firstName + " " + lastName;
+	}
 
 	//public boolean isAttractionManager() {return managesAttraction;}
 }

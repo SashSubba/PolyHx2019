@@ -15,7 +15,8 @@ import java.util.List;
 public class Attraction extends Model {
     public static final Finder<Long, Attraction> find = new Finder<>(Attraction.class);
     @Id
-    @Column(name = "id", nullable = false, columnDefinition = "identity")
+    @GeneratedValue
+    @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "attractionName", nullable = false)
     private String name;

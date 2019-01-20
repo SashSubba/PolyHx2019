@@ -1,0 +1,14 @@
+@()
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+				<ul>
+				@for(country <- Country.find.all()) {
+					<li>@country.getId - @country.getEn</li>
+				}
+				</ul>
+			</div>
+		</div>
+	</div>
+}

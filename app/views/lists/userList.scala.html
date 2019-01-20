@@ -1,0 +1,14 @@
+@()
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+				<ul>
+				@for(user <- User.find.all()) {
+					<li>@user.getFirstName @user.getLastName, @user.getEmail</li>
+				}
+				</ul>
+			</div>
+		</div>
+	</div>
+}

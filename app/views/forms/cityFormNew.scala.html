@@ -1,0 +1,28 @@
+@(cityForm: Form[ghosts.CityGhost])
+@import helper._
+@main("home", true) {
+	<div class = "container-fluid bg-dark"><br><br><br><br>
+		<div class = "row">
+			<div class="col-12">
+			@form(routes.HomeController.addCity()) {
+				<fieldset>
+					@CSRF.formField
+					@inputText(cityForm("en"), '_label -> "English Name", '_help -> "")
+					@inputText(cityForm("fr"), '_label -> "French Name", '_help -> "")
+					@input(cityForm("country")) { (id, name, value, args) =>
+						<select id="@id" name="@name" @toHtmlArgs(args)>
+							@for(c <- Country.find.all()) {
+								<option value=@c.getId>@c.getEn</option>
+							}
+						</select>
+					}
+				</fieldset>
+				<div class="actions">
+					<input type="submit" value="Create this city" class="btn primary"> or
+					<a href="@routes.HomeController.home()" class="btn">Cancel</a>
+				</div>
+			}
+			</div>
+		</div>
+	</div>
+}

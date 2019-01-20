@@ -15,7 +15,8 @@ import java.util.List;
 public class City extends Model {
     public static final Finder<Long, City> find = new Finder<>(City.class);
     @Id
-    @Column(name = "id", nullable = false, columnDefinition = "identity")
+    @GeneratedValue
+    @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "enName", nullable = false)
     private String en;
@@ -23,7 +24,7 @@ public class City extends Model {
     private String fr;
     @ManyToOne(optional = false)
     @Column(name = "country", nullable = false)
-    private City_Country country;
+    private Country country;
     @OneToMany(mappedBy = "city")
     private List<City_User> managers = new LinkedList<>();
 
@@ -33,8 +34,8 @@ public class City extends Model {
     public void setEn(String en) {this.en = en;}
     public String getFr() {return fr;}
     public void setFr(String fr) {this.fr = fr;}
-    public Country getCountry() {return country.getCountry();}
-    public void setCountry(Country country) {this.country.setCountry(country);}
+    public Country getCountry() {return country;}
+    public void setCountry(Country country) {this.country = country;}
     @Override
     public String toString(){return en;}
     public String toString(String language){
